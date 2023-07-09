@@ -32,8 +32,8 @@ const getSingleUser = async (req, res) => {
 // POST a new user
 const createUser = async (req, res) => {
   try {
-    const result = await User.create(req.body);
-    res.status(200).json({ message: "Success", user: result });
+    const newUser = await User.create(req.body);
+    res.status(200).json({ message: "Success", user: newUser });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -42,12 +42,12 @@ const createUser = async (req, res) => {
 // PUT to update a user by its _id
 const updateUser = async (req, res) => {
   try {
-    const result = await User.findOneAndUpdate(
+    const updatedUser = await User.findOneAndUpdate(
       { _id: req.params.userId },
       { $set: req.body },
       { runValidators: true, new: true }
     );
-    res.status(200).json(result);
+    res.status(200).json(updatedUser);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -74,12 +74,12 @@ const deleteUser = async (req, res) => {
 // POST to add a new friend to a user's friend list
 const addFriend = async (req, res) => {
   try {
-    const result = await User.findOneAndUpdate(
+    const addedFriend = await User.findOneAndUpdate(
       { _id: req.params.userId },
       { $addToSet: { friends: req.body.friends_id } },
       { new: true, runValidators: true }
     );
-    res.status(200).json(result);
+    res.status(200).json(addedFriend);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -88,17 +88,17 @@ const addFriend = async (req, res) => {
 // DELETE to remove a friend from a user's friend list
 const removeFriend = async (req, res) => {
   try {
-    const result = await User.findOneAndUpdate(
+    const removedFriend = await User.findOneAndUpdate(
       { _id: req.params.userId },
       { $pull: { friend: { friendId: req.params.friendId } } },
       { runValidators: true, new: true }
     );
 
-    if (!result) {
+    if (!removedFriend) {
       return res.status(404).json({ message: "No user found with that ID :(" });
     }
 
-    res.json(result);
+    res.json(removedFriend);
   } catch (err) {
     res.status(500).json(err);
   }

@@ -74,26 +74,6 @@ const deleteUser = async (req, res) => {
     res.status(500).json(err);
   }
 };
-// const deleteUser = async (req, res) => {
-//   try {
-//     const userId = req.params._id;
-
-//     const user = await User.findOneAndDelete({ _id: userId });
-
-//     if (!user) {
-//       return res.status(404).json({ message: "No user with that ID" });
-//     }
-
-//     // Make sure the user has a 'thoughts' property and it's an array
-//     if (Array.isArray(user.thoughts) && user.thoughts.length > 0) {
-//       await Thought.deleteMany({ _id: { $in: user.thoughts } });
-//     }
-
-//     res.json({ message: "User and associated thoughts deleted!" });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// };
 
 
 // ENDPOINT: /api/users/:userId/friends/:friendId

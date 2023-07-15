@@ -50,7 +50,7 @@ const createThought = async (req, res) => {
 // PUT to update a thought by its _id
 const updateThought = async (req, res) => {
   try {
-    const thoughtId = req.params.thoughIid;
+    const thoughtId = req.params.thoughId;
 
     const thought = await Thought.findOneAndUpdate(
       { _id: thoughtId },

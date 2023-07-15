@@ -44,7 +44,7 @@ const createUser = async (req, res) => {
 // PUT to update a user by its _id
 const updateUser = async (req, res) => {
   try {
-    const userId = req.params._id;
+    const userId = req.params.userId;
 
     const updatedUser = await User.findOneAndUpdate(
       { _id: userId },
@@ -60,7 +60,7 @@ const updateUser = async (req, res) => {
 // DELETE to remove user by its _id + Remove a user's associated thoughts when deleted.
 const deleteUser = async (req, res) => {
   try {
-    const userId = req.params._id;
+    const userId = req.params.userId;
 
     const user = await User.findOneAndDelete({ _id: userId });
 
@@ -120,9 +120,7 @@ const removeFriend = async (req, res) => {
     const userId = req.params.userId;
     const friendId = req.params.friendId;
 
-    const removedFriend = await User.findOneAndUpdate(
-      { _id: userId },
-      { $pull: { friends: { friendId: friendId } } },
+    const removedFriend = await User.findByIdAndUpdate(userId, { $pull: { friends: friendId } },
       { runValidators: true, new: true }
     );
 

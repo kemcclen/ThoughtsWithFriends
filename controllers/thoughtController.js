@@ -15,7 +15,7 @@ const getThoughts = async (req, res) => {
 // GET to get a single thought by its _id
 const getSingleThought = async (req, res) => {
   try {
-    const thoughtId = req.params._id;
+    const thoughtId = req.params.thoughtId;
 
     const thought = await Thought.findOne({ _id: thoughtId });
 
@@ -50,7 +50,7 @@ const createThought = async (req, res) => {
 // PUT to update a thought by its _id
 const updateThought = async (req, res) => {
   try {
-    const thoughtId = req.params._id;
+    const thoughtId = req.params.thoughIid;
 
     const thought = await Thought.findOneAndUpdate(
       { _id: thoughtId },
@@ -66,7 +66,7 @@ const updateThought = async (req, res) => {
 // DELETE to remove a thought by its _id
 const deleteThought = async (req, res) => {
   try {
-    const thoughtId = req.params._id;
+    const thoughtId = req.params.thoughtId;
 
     const deletedThought = await Thought.findOneAndDelete({ _id: thoughtId });
     res.status(200).json(deletedThought);

@@ -1,6 +1,7 @@
 const addDateSuffix = (date) => {
     let dateStr = date.toString();
 
+    //to get the last character of the date string
     const lastChar = dateStr.charAt(dateStr.length - 1);
 
     if (lastChar === '1' && dateStr !== '11') {
@@ -16,6 +17,8 @@ const addDateSuffix = (date) => {
     return dateStr;
 };
 
+
+//to format a time stamp
 module.exports = (
     timestamp,
     { monthLength = 'short', dateSuffix = true } = {}

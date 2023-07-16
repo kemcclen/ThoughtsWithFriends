@@ -6,6 +6,7 @@ const { User, Thought } = require("../models");
 const getUsers = async (req, res) => {
   try {
     const allUsers = await User.find().populate("thoughts").populate("friends");
+    // console.log(allUsers);
     res.status(200).json(allUsers);
   } catch (err) {
     res.status(500).json(err);
@@ -75,7 +76,6 @@ const deleteUser = async (req, res) => {
   }
 };
 
-
 // ENDPOINT: /api/users/:userId/friends/:friendId
 
 // POST to add a new friend to a user's friend list
@@ -100,7 +100,9 @@ const removeFriend = async (req, res) => {
     const userId = req.params.userId;
     const friendId = req.params.friendId;
 
-    const removedFriend = await User.findByIdAndUpdate(userId, { $pull: { friends: friendId } },
+    const removedFriend = await User.findByIdAndUpdate(
+      userId,
+      { $pull: { friends: friendId } },
       { runValidators: true, new: true }
     );
 

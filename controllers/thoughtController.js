@@ -50,7 +50,7 @@ const createThought = async (req, res) => {
 // PUT to update a thought by its _id
 const updateThought = async (req, res) => {
   try {
-    const thoughtId = req.params.thoughId;
+    const thoughtId = req.params.thoughtId;
 
     const thought = await Thought.findOneAndUpdate(
       { _id: thoughtId },
@@ -99,12 +99,15 @@ const addReaction = async (req, res) => {
         const thoughtId = req.params.thoughtId;
         const reactionId = req.params.reactionId;
     
-        const removeReaction = await Thought.findOneAndUpdate(
-          { _id: thoughtId },
-          { $pull: { reactions: { _id: reactionId } } },
+        const removeReaction = await Thought.findByIdAndUpdate(
+          thoughtId,
+          { $pull: { reactions: reactionId } } ,
           { runValidators: true, new: true }
         );
-    
+        if (!removeReaction) {
+          return res.status(404).json({ message: "No reaction found with that ID :(" });
+        }
+        
         res.json(removeReaction);
       } catch (err) {
         res.status(500).json(err);

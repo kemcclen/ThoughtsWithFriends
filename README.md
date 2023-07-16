@@ -30,37 +30,37 @@
 5.  Using insomnia or your browser, view:
 
 - localhost:3001/api/users
-- localhost:3001/api/:userID
-- localhost:3001/api/:userID/:friends
-- localhost:3001/api/:userID/friends/:friendID
+- localhost:3001/api/users/userID
+- localhost:3001/api/users/userID/friends
+- localhost:3001/api/users/userID/friends/friendID
 - localhost:3001/api/thoughts
-- localhost:3001/api/:thoughtID
-- localhost:3001/api/:thoughtID/:reactions
-- localhost:3001/api/:thoughtID/reactions/:reactionID
+- localhost:3001/api/thoughts/thoughtID
+- localhost:3001/api/thoughts/thoughtID/reactions
+- localhost:3001/api/thoughts/thoughtID/reactions/:reactionID
 
 
 ## Usage:
 
 After you have followed the steps in [Installation](#installation):
 
-**Interface**: Thought With Friends runs in the browser or applications like Insomnia that are designed to design, debug or test API's. 
+**Interface**: Thought With Friends runs in the browser or applications like Insomnia that are designed to design, debug or test API's. To 
 
 
-**id search**: if you are looking for a specific category, product or tag, add the id number to the end of your search. For example:
+**id search**: if you are looking for a specific user, thought or reaction, add the id number to the end of your search. For example:
 - localhost:3001/api/users/1
 - localhost:3001/api/thoughts/3
 
 
 ## Demonstration:
 
-1. **Categories** localhost:3001/api/categories
-![categories](/assets/categories.png)
+1. **GET ** localhost:3001/api/categories
+![idsearch](/assets/idsearch.png)
 
 2. **Products** localhost:3001/api/products
-![products](/assets/products.png)
+
 
 3. **Tags** localhost:3001/api/tags
-![tags](/assets/tags)
+
 
 3. **id Search** localhost:3001/api/tags/4
 Add the id number of the category, product or tag you are looking for to your endpoint. For example, 4 in this case.

@@ -76,6 +76,7 @@ const deleteUser = async (req, res) => {
   }
 };
 
+
 // ENDPOINT: /api/users/:userId/friends/:friendId
 
 // POST to add a new friend to a user's friend list

@@ -54,7 +54,7 @@ After you have followed the steps in [Installation](#installation):
 ## Demonstration:
 
 1. **GET All Users** localhost:3001/api/users/
-![idsearch](/assets/idsearch.png)
+
 
 2. **GET Single User** localhost:3001/api/users/userId
 

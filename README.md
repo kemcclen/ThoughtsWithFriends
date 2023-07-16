@@ -53,84 +53,98 @@ After you have followed the steps in [Installation](#installation):
 
 ## Demonstration:
 
-Uploading ThoughtsWFriends.mov…
-
+https://github.com/kemcclen/ThoughtsWithFriends/assets/123762040/8917f088-97ee-461b-8d3f-4fed3635a28c
 
 
 ### User Routes
 
 1. **GET All Users** localhost:3001/api/users/
+   
 ![all users](./assets/allUsers.png)
 
 2. **GET Single User** localhost:3001/api/users/userId
+   
 ![single User](./assets/singleUser.png)
 
 3. **POST New User** localhost:3001/api/users/
+
 'Body JSON:
 {
 	"username": "username",
 		"email": "email"
 }'
+
 ![new user](./assets/newUser.png)
 
 4. **PUT Update User** localhost:3001/api/users/userId
+
 'Body JSON:
 {"username": "new cool name"}'
+
 ![update user](./assets/updateUser.png)
 
 5. **DELETE Single User** localhost:3001/api/users/userId
+   
 ![delete user](./assets/deleteUser.png)
 
 6. **POST Add Friend**localhost:3001/api/users/userId/friends/
+
 'Body JSON:
 {"friends": "friendId"}'
+
 ![add friend](./assets/addfriend.png)
 
-6. **DELETE Remove Friend**localhost:3001/api/users/userId/friends/friendId
+7. **DELETE Remove Friend**localhost:3001/api/users/userId/friends/friendId
+
 ![remove friend](./assets/deleteFriend.png)
 
 ### Thought Routes
 
 1. **GET All Thoughts** localhost:3001/api/thoughts/
+
 ![all thoughts](./assets/allThoughts.png)
 
 2. **GET Single Thought** localhost:3001/api/users/thoughtId
+
 ![single thought](./assets/singleThought.png)
 
 3. **POST New Thought** localhost:3001/api/thoughts/
+
 'Body JSON:
 {
 	"username":"username",
 	"thoughtText": "this is my new thought",
 	"userId": "userId"	
 }'
+
 ![new thought](./assets/addThought.png)
 
 4. **PUT Update Thought** localhost:3001/api/thoughts/thoughtId
+
 'Body JSON:
 {
 		"username":"username",
 	"thoughtText": "this is my UPDATED thought",
 	"userId": "userId"
 }'
+
 ![update thought](./assets/updateThought.png)
 
 5. **DELETE Single Thought** localhost:3001/api/thoughts/thoughtId
+
 ![delete thought](./assets/deleteThought.png)
 
 6. **POST Add Reaction**localhost:3001/api/thoughts/thoughtId/reactions/
+
 'Body JSON
 {"reactionBody": "this is where you react",
 "username" :"username"}'
+
 ![add reaction](./assets/addReaction.png)
 
 6. **DELETE Remove Reaction**localhost:3001/api/thoughts/thoughtId/reactions/reactionId
+
 ![delete reaction](./assets/deleteReaction.png)
-
-
-
-
-
 
 ## Contributions: 
 

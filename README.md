@@ -53,28 +53,78 @@ After you have followed the steps in [Installation](#installation):
 
 ## Demonstration:
 
-1. **GET All Users** localhost:3001/api/users/
+### User Routes
 
+1. **GET All Users** localhost:3001/api/users/
+![all users](./assets/allUsers.png)
 
 2. **GET Single User** localhost:3001/api/users/userId
-
+![single User](./assets/singleUser.png)
 
 3. **POST New User** localhost:3001/api/users/
-Body JSON:
+'Body JSON:
 {
 	"username": "username",
 		"email": "email"
-}
+}'
+![new user](./assets/newUser.png)
 
-4. **DELETE Single User** 
-Body JSON:
+4. **PUT Update User** localhost:3001/api/users/userId
+'Body JSON:
+{"username": "new cool name"}'
+![update user](./assets/updateUser.png)
+
+5. **DELETE Single User** localhost:3001/api/users/userId
+![delete user](./assets/deleteUser.png)
+
+6. **POST Add Friend**localhost:3001/api/users/userId/friends/
+'Body JSON:
+{"friends": "friendId"}'
+![add friend](./assets/addfriend.png)
+
+6. **DELETE Remove Friend**localhost:3001/api/users/userId/friends/friendId
+![remove friend](./assets/deleteFriend.png)
+
+### Thought Routes
+
+1. **GET All Thoughts** localhost:3001/api/thoughts/
+![all thoughts](./assets/allThoughts.png)
+
+2. **GET Single Thought** localhost:3001/api/users/thoughtId
+![single thought](./assets/singleThought.png)
+
+3. **POST New Thought** localhost:3001/api/thoughts/
+'Body JSON:
 {
-	"username": "username",
-		"email": "email"
-}
+	"username":"username",
+	"thoughtText": "this is my new thought",
+	"userId": "userId"	
+}'
+![new thought](./assets/addThought.png)
+
+4. **PUT Update Thought** localhost:3001/api/thoughts/thoughtId
+'Body JSON:
+{
+		"username":"username",
+	"thoughtText": "this is my UPDATED thought",
+	"userId": "userId"
+}'
+![update thought](./assets/updateThought.png)
+
+5. **DELETE Single Thought** localhost:3001/api/thoughts/thoughtId
+![delete thought](./assets/deleteThought.png)
+
+6. **POST Add Reaction**localhost:3001/api/thoughts/thoughtId/reactions/
+'Body JSON
+{"reactionBody": "this is where you react",
+"username" :"username"}'
+![add reaction](./assets/addReaction.png)
+
+6. **DELETE Remove Reaction**localhost:3001/api/thoughts/thoughtId/reactions/reactionId
+![delete reaction](./assets/deleteReaction.png)
 
 
-https://github.com/kemcclen/ThoughtsWithFriends
+
 
 
 
@@ -82,7 +132,7 @@ https://github.com/kemcclen/ThoughtsWithFriends
 
 Contributions to ComCore are welcome! If you have any improvements, bug fixes, or new features to add, feel free to submit a pull request.
 
-To contribute to ComCore, please follow these steps:
+To contribute to Thoughts With Friends, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
@@ -95,13 +145,13 @@ To contribute to ComCore, please follow these steps:
 
 Please note that by submitting a pull request, you agree to allow the project maintainers to license your work under the project's existing license.
 
-Thank you for considering contributing to ComCore. Your contributions are highly appreciated!
+Thank you for considering contributing to Thoughts With Friends. Your contributions are highly appreciated!
 
 ## Links: 
-- Repository: https://github.com/kemcclen/ComCore
+- Repository: https://github.com/kemcclen/ThoughtsWithFriends
 
 ## License:
-WorkFlow is licensed under the [MIT License](https://opensource.org/license/mit/).
+Thoughts With Friends is licensed under the [MIT License](https://opensource.org/license/mit/).
 
 _The MIT License is a permissive open-source license that allows you to use, modify, and distribute the project for both commercial and non-commercial purposes. It provides you with the freedom to customize the application to suit your needs._
 

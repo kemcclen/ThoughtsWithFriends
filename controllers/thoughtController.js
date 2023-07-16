@@ -99,9 +99,9 @@ const addReaction = async (req, res) => {
         const thoughtId = req.params.thoughtId;
         const reactionId = req.params.reactionId;
     
-        const removeReaction = await Thought.findByIdAndUpdate(
-          thoughtId,
-          { $pull: { reactions: reactionId } } ,
+        const removeReaction = await Thought.findOneAndUpdate(
+          { _id: req.params.thoughtId },
+          { $pull: { reactions: { reactionId: req.params.reactionId } } },
           { runValidators: true, new: true }
         );
         if (!removeReaction) {

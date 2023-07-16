@@ -53,19 +53,25 @@ After you have followed the steps in [Installation](#installation):
 
 ## Demonstration:
 
-1. **GET ** localhost:3001/api/categories
+1. **GET All Users** localhost:3001/api/users/
 ![idsearch](/assets/idsearch.png)
 
-2. **Products** localhost:3001/api/products
+2. **GET Single User** localhost:3001/api/users/userId
 
 
-3. **Tags** localhost:3001/api/tags
+3. **POST New User** localhost:3001/api/users/
+Body JSON:
+{
+	"username": "username",
+		"email": "email"
+}
 
-
-3. **id Search** localhost:3001/api/tags/4
-Add the id number of the category, product or tag you are looking for to your endpoint. For example, 4 in this case.
-![idsearch](/assets/idsearch.png)
-
+4. **DELETE Single User** 
+Body JSON:
+{
+	"username": "username",
+		"email": "email"
+}
 
 
 https://github.com/kemcclen/ThoughtsWithFriends
